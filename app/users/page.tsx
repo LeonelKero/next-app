@@ -22,6 +22,7 @@ const UsersPage = async () => {
       <section>
         <Link href={"/"}>Home</Link>
       </section>
+
       <ul>
         {users.map((user) => (
           <li key={user.id}>{user.username}</li>
