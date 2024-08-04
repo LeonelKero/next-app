@@ -6,7 +6,7 @@ interface Props {
   onClick: () => void;
 }
 
-const WBT_Button = ({ children, class_name, onClick }: Props) => {
+const WBT_Button = ({ children, class_name = "btn", onClick }: Props) => {
   return (
     <button className={class_name} onClick={() => onClick()}>
       {children}
