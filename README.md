@@ -19,6 +19,10 @@ Routing is based on convention, not configuration. For instance for `/users` pat
 
 Nested routes follow the same principle for routing.
 
+### Directive
+
+- `"use client"` is use on the first line (on top) of the component to mention that the component will need client interaction like click event.
+
 ### Navigation
 
 Navigation is made using `<Link href="/path">Anchor</Ling>` for client side navigation.
@@ -26,3 +30,5 @@ Navigation is made using `<Link href="/path">Anchor</Ling>` for client side navi
 ### Page Rendering
 
 ![Rendering screenshot](./screenshots/sht01.png)
+
+### Advanced Routing & Navigation
