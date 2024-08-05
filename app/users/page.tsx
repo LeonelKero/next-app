@@ -1,6 +1,5 @@
 // "use client";
 import Link from "next/link";
-import WBT_Button from "../components/AppBtn/WBT_Button";
 
 interface User {
   id: number;
@@ -15,7 +14,11 @@ interface Address {
   city: string;
 }
 
-const UsersPage = async () => {
+type Props = {
+  searchParams: { sort: string };
+};
+
+const UsersPage = async ({ searchParams: { sort } }: Props) => {
   const result = await fetch("https://jsonplaceholder.typicode.com/users");
   let users: User[] = await result.json();
 
@@ -29,6 +32,7 @@ const UsersPage = async () => {
       <section>
         <Link href={"/"}>Home</Link>
       </section>
+      <section>Order by {sort}</section>
       <section className="overflow-x-auto">
         <table className="table table-sm">
           <thead>

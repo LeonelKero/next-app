@@ -15,6 +15,10 @@ NextJs technology is build on top of ReactJs, it is a complete framework with al
 `ROUTING IS BASED ON THE FILE SYSTEM` that's why
 Routing is based on convention, not configuration. For instance for `/users` path, create a folder under `App` named `users`. Inside users folder create
 
+#### `params` keyword
+
+It's used to access path variables or parameters.
+
 - Path `users/id` ie users/1... or `users/3/cart/1`
 
 Under `users` folder, create another folder named `[id]` and create `page.tsx` in order to access it. THIS ONLY WORK AT THE PAGE LEVEL. This process can be repeated for complex path like `users/1/cart/3` but this time `[id]` can't be used again for `cart`. Inside `cart` it is possible to access user `id` parameter.
@@ -39,6 +43,17 @@ interface Props {
     params: { slug: string[] } // The parameter is an array of strings, representing the complex path "users/cart/product/shoes" for instance
 }
 // Passed as component properties
+```
+
+#### `searchParams` keyword
+
+It's used to access parameters like (brand) ie `cars?brand=mercedes`
+
+```Ts
+interface Props {
+    searchParams: { brand: string }
+}
+// Pass the property to the component
 ```
 
 #### Special Files for routing
