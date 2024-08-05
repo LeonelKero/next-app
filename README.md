@@ -15,15 +15,30 @@ NextJs technology is build on top of ReactJs, it is a complete framework with al
 `ROUTING IS BASED ON THE FILE SYSTEM` that's why
 Routing is based on convention, not configuration. For instance for `/users` path, create a folder under `App` named `users`. Inside users folder create
 
-- Path `users/id` ie users/1...
+- Path `users/id` ie users/1... or `users/3/cart/1`
 
 Under `users` folder, create another folder named `[id]` and create `page.tsx` in order to access it. THIS ONLY WORK AT THE PAGE LEVEL. This process can be repeated for complex path like `users/1/cart/3` but this time `[id]` can't be used again for `cart`. Inside `cart` it is possible to access user `id` parameter.
 
 ```Ts
-interface Props{
-    params: {id: number} // Here 'id' should be the same name as set for the folder ie [id] (with square brackets) previously
+interface Props {
+    params: { id: number} // Here 'id' should be the same name as set for the folder ie [id] (with square brackets) previously
 }
 // Pass this props to the functional component
+```
+
+- Path `users/cart/product/shoes`
+
+`[...slug]` make extra path parts mendatory ie `/cart/...` part
+
+`[[...slug]]` make extra path parts optional ie no need `/cart/product/...` part in order to work.
+
+Here we are not going to create an heavy nested file structure. Instead we proceed like this. We create a folder named `[...slug]` then a file `page.tsx`, inside this file:
+
+```Ts
+interface Props {
+    params: { slug: string[] } // The parameter is an array of strings, representing the complex path "users/cart/product/shoes" for instance
+}
+// Passed as component properties
 ```
 
 #### Special Files for routing
