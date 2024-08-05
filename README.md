@@ -7,6 +7,8 @@ NextJs technology is build on top of ReactJs, it is a complete framework with al
 - NextJs 14.2.8
 - React 18
 - Tailwind
+- Typescript
+- fast-sort
 
 ## Topics
 
