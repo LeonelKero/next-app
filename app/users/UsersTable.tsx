@@ -1,10 +1,16 @@
+"use client";
+import { useState } from "react";
+import WBT_Button from "../components/AppBtn/WBT_Button";
+
 type Props = {
   searchParams: { sort: string };
+  users: User[];
 };
 
-const UsersTable = async ({ searchParams: { sort } }: Props) => {
-  const result = await fetch("https://jsonplaceholder.typicode.com/users");
-  let users: User[] = await result.json();
+const UsersTable = ({ searchParams: { sort }, users }: Props) => {
+  const [usersData, setUsersData] = useState(users);
+
+  const sortBy = (field: string) => {};
 
   return (
     <div>
@@ -14,7 +20,14 @@ const UsersTable = async ({ searchParams: { sort } }: Props) => {
           <thead>
             <tr>
               <th>Id</th>
-              <th>NAME</th>
+              <th>
+                <WBT_Button
+                  class_name="btn btn-ghost"
+                  onClick={() => console.log("Button clicked")}
+                >
+                  NAME
+                </WBT_Button>
+              </th>
               <th>USERNAME</th>
               <th>EMAIL</th>
               <th>CITY</th>
@@ -22,7 +35,7 @@ const UsersTable = async ({ searchParams: { sort } }: Props) => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => (
+            {usersData.map((user) => (
               <tr key={user.id}>
                 <td>{user.id}</td>
                 <td>{user.name}</td>
