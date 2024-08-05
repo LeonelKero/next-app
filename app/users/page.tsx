@@ -2,7 +2,7 @@ import Link from "next/link";
 import UsersTable from "./UsersTable";
 
 type Props = {
-  searchParams: { sort: string };
+  searchParams: { sortBy: string };
 };
 
 const UsersPage = async ({ searchParams }: Props) => {
