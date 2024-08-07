@@ -12,7 +12,7 @@ const UsersPage = async ({ searchParams: { sortBy } }: Props) => {
   return (
     <main>
       <section>
-        <Link href={"/"}>Home</Link>
+        <Link href={"/users/new"}>Add User</Link>
         <UsersTable sortBy={sortBy} users={users} />
       </section>
     </main>
