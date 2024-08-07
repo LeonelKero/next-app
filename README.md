@@ -1,6 +1,6 @@
 # Hands on NextJs 14+
 
-NextJs technology is build on top of ReactJs, it is a complete framework with all the necessary tools to build a fully fled application.
+NextJs technology is builded on top of ReactJs, it is a complete framework with all the necessary tools to build a fully fled application.
 
 ## Technologies
 
@@ -12,9 +12,13 @@ NextJs technology is build on top of ReactJs, it is a complete framework with al
 
 ## Topics
 
+- Basic building blocks (file structure, page, layout, etc.)
+- Routes (simple and complex)
+- Navigation
+
 ### Routing
 
-`ROUTING IS BASED ON THE FILE SYSTEM` that's why
+`ROUTING IS BASED ON THE FILE SYSTEM/STRUCTURE` that's why
 Routing is based on convention, not configuration. For instance for `/users` path, create a folder under `App` named `users`. Inside users folder create
 
 #### `params` keyword
@@ -58,7 +62,7 @@ interface Props {
 // Pass the property to the component
 ```
 
-#### Special Files for routing
+#### Special Files in NextJs 14
 
 - `page.tsx` file. Without this file this path/folder is not publicly accessible.
 - `layout.tsx` file, for defining a common layout for our page.
@@ -76,6 +80,23 @@ Nested routes follow the same principle for routing.
 ### Navigation
 
 Navigation is made using `<Link href="/path">Anchor</Ling>` for client side navigation.
+
+#### Programmatic navigation
+
+Programmatic navigation is made using `useRouter` hook from `next/navigation` package
+
+```Ts
+"use client";
+import { useRouter } from "next/navigation";
+
+const MyComponent = () => {
+    const router = useRouter()
+
+    return <>
+        <button onClick={()=>router.push("/path-to-go")}>Navigate Somewhere</button>
+    </button>
+}
+```
 
 ### Page Rendering
 
