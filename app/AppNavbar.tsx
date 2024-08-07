@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const AppNavbar = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-gray-300">
       <div className="flex-1">
         <Link href={"/"} className="btn btn-ghost text-xl">
           Datastore

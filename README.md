@@ -12,7 +12,7 @@ NextJs technology is builded on top of ReactJs, it is a complete framework with 
 
 ## Topics
 
-- Basic building blocks (file structure, page, layout, etc.)
+- Basic building blocks (file structure, page, layout, loadin, error, etc.)
 - Routes (simple and complex)
 - Navigation
 
