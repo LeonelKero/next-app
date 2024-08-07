@@ -1,5 +1,6 @@
 "use client";
 import { sort } from "fast-sort";
+import Link from "next/link";
 import { useState } from "react";
 import WBT_Button from "../components/AppBtn/WBT_Button";
 
@@ -12,8 +13,8 @@ const UsersTable = ({ searchParams: { sortBy }, users }: Props) => {
   const [usersData, setUsersData] = useState(users);
 
   // Todo: Sort table elements
-  const sortByHandler = (filedName: string) => {
-    setUsersData((olds) => sort(olds).asc((user) => user.name));
+  const sortByHandler = (filedName: "name" | "username" | "email") => {
+    setUsersData((olds) => sort(olds).asc((user) => user[filedName]));
   };
 
   const deleteHandler = (eltId: number) => {
@@ -29,15 +30,29 @@ const UsersTable = ({ searchParams: { sortBy }, users }: Props) => {
             <tr>
               <th>Id</th>
               <th>
-                <WBT_Button
-                  class_name="btn btn-ghost"
+                <Link
+                  href={"/users?sortBy=name"}
                   onClick={() => sortByHandler("name")}
                 >
                   NAME
-                </WBT_Button>
+                </Link>
               </th>
-              <th>USERNAME</th>
-              <th>EMAIL</th>
+              <th>
+                <Link
+                  href={"/users?sortBy=username"}
+                  onClick={() => sortByHandler("username")}
+                >
+                  USERNAME
+                </Link>
+              </th>
+              <th>
+                <Link
+                  href={"/users?sortBy=email"}
+                  onClick={() => sortByHandler("email")}
+                >
+                  EMAIL
+                </Link>
+              </th>
               <th>CITY</th>
               <th>ACTIONS</th>
             </tr>
