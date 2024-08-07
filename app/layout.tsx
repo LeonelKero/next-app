@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en" data-theme="lemonade">
       <body className={inter.className}>
         <AppNavbar />
-        <main>{children}</main>
+        <main className="m-4">{children}</main>
       </body>
     </html>
   );

@@ -23,7 +23,7 @@ const UsersTable = ({ sortBy, users }: Props) => {
 
   return (
     <div>
-      <section>Order by {sortBy}</section>
+      <section className="mt-2 mb-2">Order by {sortBy}</section>
       <section className="overflow-x-auto">
         <table className="table table-sm">
           <thead>
