@@ -5,14 +5,14 @@ import { useState } from "react";
 import WBT_Button from "../components/AppBtn/WBT_Button";
 
 type Props = {
-  searchParams: { sortBy: string };
+  sortBy: string;
   users: User[];
 };
 
-const UsersTable = ({ searchParams: { sortBy }, users }: Props) => {
+const UsersTable = ({ sortBy, users }: Props) => {
   const [usersData, setUsersData] = useState(users);
 
-  // Todo: Sort table elements
+  // Todo: Other approach will be to get search params from 'page.tsx'
   const sortByHandler = (filedName: "name" | "username" | "email") => {
     setUsersData((olds) => sort(olds).asc((user) => user[filedName]));
   };

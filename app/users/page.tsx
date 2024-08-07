@@ -5,7 +5,7 @@ type Props = {
   searchParams: { sortBy: string };
 };
 
-const UsersPage = async ({ searchParams }: Props) => {
+const UsersPage = async ({ searchParams: { sortBy } }: Props) => {
   const result = await fetch("https://jsonplaceholder.typicode.com/users");
   let users: User[] = await result.json();
 
@@ -13,7 +13,7 @@ const UsersPage = async ({ searchParams }: Props) => {
     <main>
       <section>
         <Link href={"/"}>Home</Link>
-        <UsersTable searchParams={searchParams} users={users} />
+        <UsersTable sortBy={sortBy} users={users} />
       </section>
     </main>
   );
