@@ -98,6 +98,20 @@ const MyComponent = () => {
 }
 ```
 
+#### Programmatically show not found page
+
+It is made using `notFound()` function from `next/navigation`.
+
+```Ts
+import { notFound } from "next/navigation";
+
+const MyComponent = () => {
+    // some code
+    if(Condition) notFound();
+    // other code
+}
+```
+
 ### Page Rendering
 
 ![Rendering screenshot](./screenshots/sht01.png)
