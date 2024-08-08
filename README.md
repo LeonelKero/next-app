@@ -69,7 +69,8 @@ interface Props {
 - `loading.tsx` file, to show loading element when navigate on this route.
 - `not-found.tsx` file, to show 404 path, custom error.
 - `route.tsx` file, for creating APIs.
-- `error.tsx` file, for general errors.
+- `global-error.tsx` file, to catch errors even at the layout level.
+- `error.tsx` file, for general errors - and should be rendered on client side (meaning usage of "use client" directive). `THIS COMPONENT WILL AUTOMATICALLY GET AN 'ERROR' OBJECT AS PROPS`.
 
 Nested routes follow the same principle for routing.
 
