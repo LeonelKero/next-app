@@ -15,6 +15,25 @@ NextJs technology is builded on top of ReactJs, it is a complete framework with 
 - Basic building blocks (file structure, page, layout, loadin, error, etc.)
 - Routes (simple and complex)
 - Navigation
+- Building API
+
+## API
+
+Inside the file we can had either a `page.tsx` for UI or `route.tsx` for handling HTTP requests. But NOT BOTH. Inside `route.tsx` file, methods should be named as HTTP verbs ie. GET, POST, PUT, PATCH, etc.
+
+```Ts
+export function GET(request: NextRequest) {
+    // some business logic
+    return NextResponse.json(
+        {
+        // here the response object
+        },
+        {
+            status: 200
+        }
+    )
+}
+```
 
 ### Routing
 
