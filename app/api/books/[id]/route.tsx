@@ -34,4 +34,16 @@ const PUT = async (request: NextRequest, { params: { id } }: Props) => {
   );
 };
 
-export { GET, PUT };
+const DELETE = (request: NextRequest, { params: { id } }: Props) => {
+  if (parseInt(id, 10) > 10)
+    return NextResponse.json(
+      { message: "Unable to remove book with ID " + id },
+      { status: 402 }
+    );
+  return NextResponse.json(
+    { messqge: "Book item successfully removed." },
+    { status: 200 }
+  );
+};
+
+export { DELETE, GET, PUT };
