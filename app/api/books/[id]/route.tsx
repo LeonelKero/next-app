@@ -34,4 +34,4 @@ const PUT = async (request: NextRequest, { params: { id } }: Props) => {
   );
 };
 
-export { GET };
+export { GET, PUT };
