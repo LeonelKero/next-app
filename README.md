@@ -139,3 +139,7 @@ const MyComponent = () => {
 ![Rendering screenshot](./screenshots/sht01.png)
 
 ### Advanced Routing & Navigation
+
+### Prisma integration
+
+The [documentation](https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/nextjs-prisma-client-dev-practices) is there to help.

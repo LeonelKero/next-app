@@ -21,6 +21,11 @@ export const GET = (request: NextRequest, { params: { id } }: Props) => {
 };
 
 export const DELETE = (request: NextRequest, { params: { id } }: Props) => {
+  if (parseInt(id, 10) > 10)
+    return NextResponse.json(
+      { error: "Unable to delete element ID miss match" },
+      { status: 400 }
+    );
   return NextResponse.json(
     { message: "Product with ID " + id + " successfully removed" },
     { status: 200 }
