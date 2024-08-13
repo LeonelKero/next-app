@@ -45,7 +45,7 @@ export const DELETE = async (
 };
 
 // UPDATE Product by ID
-export const UPDATE = async (
+export const PUT = async (
   request: NextRequest,
   { params: { id } }: Props
 ) => {
