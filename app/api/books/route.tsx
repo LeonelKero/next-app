@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import schema from "./schema";
 
 const GET = (request: NextRequest) =>
   NextResponse.json([
@@ -7,10 +8,12 @@ const GET = (request: NextRequest) =>
   ]);
 
 const POST = async (request: NextRequest) => {
-  const body = (await request.json()) as Book;
-  if (!body.title || !body.releasedAt)
+  const body = await request.json();
+  const validationStatus = schema.safeParse(body);
+
+  if (!validationStatus.success)
     return NextResponse.json(
-      { error: "Invalid data submitted" },
+      { error: validationStatus.error.errors },
       { status: 405 }
     );
   return NextResponse.json({ id: 1, ...body }, { status: 201 });
