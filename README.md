@@ -142,6 +142,8 @@ const MyComponent = () => {
 
 ### Prisma integration
 
+ALL Prisma CALLS ARE ASYNCHRONOUS
+
 - `npx prisma init` to initiate the project with prisma
 
 The [documentation](https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/nextjs-prisma-client-dev-practices) is there to help.
