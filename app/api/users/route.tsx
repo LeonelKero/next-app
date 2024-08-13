@@ -9,7 +9,7 @@ export const GET = async (request: NextRequest) => {
 
 export const POST = async (request: NextRequest) => {
   const userRequest = await request.json();
-  const validationStatus = await userSchema.safeParse(userRequest); // validate user data against schema
+  const validationStatus = userSchema.safeParse(userRequest); // validate user data against schema
 
   // If it does not match, it is a bad request
   if (!validationStatus.success)
@@ -18,7 +18,14 @@ export const POST = async (request: NextRequest) => {
       { status: 400 }
     );
 
-  // Otherwise persist data to databae
+  // As email is unique, first check if it is not already used
+  const optionalUser = await prisma.user.findFirst({
+    where: { email: validationStatus.data.email },
+  });
+  if (optionalUser)
+    // if such user exist - BAD REQUEST
+    return NextResponse.json({ error: "Email already used" }, { status: 400 });
+  // Then if 'email' is not yet use, save
   const result = await prisma.user.create({ data: userRequest });
   return NextResponse.json(result, { status: 201 });
 };
