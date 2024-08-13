@@ -142,4 +142,13 @@ const MyComponent = () => {
 
 ### Prisma integration
 
+- `npx prisma init` to initiate the project with prisma
+
 The [documentation](https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/nextjs-prisma-client-dev-practices) is there to help.
+
+To define models and relationship see the [Model documentation](https://www.prisma.io/docs/orm/prisma-schema/data-model/models)
+
+After any model changed, we should run a migration.
+
+- `npx prisma migrate dev` to run the migration in order to keep the database in sync with the models (For Relational databases).
+- `npx prisma push` to run migration on None Relational databases like MongoDB for instance.
