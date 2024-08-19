@@ -24,6 +24,9 @@ function UploadFile() {
         onSuccess={(result, options) => {
           setUploadedAsset(result?.info as CloudinaryUploadResult);
         }}
+        options={{
+          sources: ["local", "url"],
+        }}
       >
         {({ open }) => (
           <button className="btn btn-secondary" onClick={() => open()}>
