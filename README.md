@@ -11,6 +11,7 @@ NextJs technology is builded on top of ReactJs, it is a complete framework with 
 - fast-sort 3.4+
 - zod 3.23+
 - prisma 5.18+
+- MySQL
 - Cloudinary
 
 ## Topics
