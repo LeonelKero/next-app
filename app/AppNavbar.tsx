@@ -20,25 +20,33 @@ const AppNavbar = () => {
           <li>
             <Link href={"/admin"}>Admin</Link>
           </li>
-          {status === "unauthenticated" ? (
+          {status === "unauthenticated" && (
             <li>
               <Link href={"/api/auth/signin"}>Login</Link>
             </li>
-          ) : (
-            <div>{session?.user?.name}</div>
           )}
           <li>
-            <details>
-              <summary>Others</summary>
-              <ul className="bg-base-100 rounded-t-none p-2">
-                <li className="w-auto">
-                  <Link href={"/lost"}>Lost path</Link>
-                </li>
-                <li>
-                  <Link href={"/error"}>Error path</Link>
-                </li>
-              </ul>
-            </details>
+            {status === "authenticated" && (
+              <details>
+                <>
+                  <summary>{session?.user?.name}</summary>
+                  {/* <div className="avatar">
+                    <div className="w-7 h-7 rounded-full">
+                      <img src={session.user?.image!} />
+                    </div>
+                  </div> */}
+                  <ul className="bg-base-100 rounded-t-none p-2">
+                    {/* <li className="w-auto">
+                      <Link href={"/lost"}>Lost path</Link>
+                    </li> */}
+                    <li>
+                      {/* <Link href={"/error"}>Error path</Link> */}
+                      <Link href={"/api/auth/signout"}>Logout</Link>
+                    </li>
+                  </ul>
+                </>
+              </details>
+            )}
           </li>
         </ul>
       </div>
