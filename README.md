@@ -112,6 +112,10 @@ Navigation is made using `<Link href="/path">Anchor</Ling>` for client side navi
 
 Programmatic navigation is made using `useRouter` hook from `next/navigation` package
 
+## DIRECTIVES
+
+ANY COMPONENT USING A REACT HOOK MUST HAVE `use client` DIRECTIVE.
+
 ```Ts
 "use client";
 import { useRouter } from "next/navigation";
