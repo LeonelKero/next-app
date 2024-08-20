@@ -114,7 +114,7 @@ Programmatic navigation is made using `useRouter` hook from `next/navigation` pa
 
 ## DIRECTIVES
 
-ANY COMPONENT USING A REACT HOOK MUST HAVE `use client` DIRECTIVE.
+ANY COMPONENT USING A REACT HOOK WHICH INTERNALLY USE `useContext` HOOK MUST HAVE `use client` DIRECTIVE.
 
 ```Ts
 "use client";
