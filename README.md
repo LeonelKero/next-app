@@ -13,6 +13,7 @@ NextJs technology is builded on top of ReactJs, it is a complete framework with 
 - prisma 5.18+
 - MySQL
 - Cloudinary
+- NextAuth 4.24+
 
 ## Topics
 
@@ -20,6 +21,8 @@ NextJs technology is builded on top of ReactJs, it is a complete framework with 
 - Routes (simple and complex)
 - Navigation
 - Building API
+- Upload file to cloud (Cloudinary)
+- Authentication
 
 ## API
 
