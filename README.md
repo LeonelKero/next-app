@@ -159,3 +159,13 @@ After any model changed, we should run a migration.
 
 - `npx prisma migrate dev` to run the migration in order to keep the database in sync with the models (For Relational databases).
 - `npx prisma push` to run migration on None Relational databases like MongoDB for instance.
+
+### Authentication with NextAuth
+
+Use this [NextAuth documentation Providers](https://next-auth.js.org/providers/) for configuring different providers
+
+This link to [configure Oauth with Google provider](https://next-auth.js.org/providers/google)
+
+#### Inner routes
+
+- `/api/auth/signin` defined by NextAuth for builtin to navigate to SignIn page.
