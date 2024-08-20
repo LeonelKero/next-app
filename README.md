@@ -172,4 +172,8 @@ This link to [configure Oauth with Google provider](https://next-auth.js.org/pro
 
 #### Inner routes
 
-- `/api/auth/signin` defined by NextAuth for builtin to navigate to SignIn page.
+THESE ARE THE ENDPOINTS HANDLE BY NextAuth
+
+- `/api/auth/signin` defined by NextAuth for SignIn.
+
+- `/api/auth/signiout` defined by NextAuth for logout.
