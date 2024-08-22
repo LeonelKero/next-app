@@ -181,7 +181,7 @@ THESE ARE THE ENDPOINTS HANDLE BY NextAuth
 ### Protect Routes
 
 The file holding this configuration should be at the root of the project file structure and named as `middleware.ts`.
-
+[Documentation](https://next-auth.js.org/configuration/nextjs#middleware)
 ```Ts
 export {default} from 'next-auth/middleware';
 
@@ -189,6 +189,6 @@ export const config = {
     // * -> for zero or more characters, Then /users/:id* match "/users";  "/users/[1-100..."; "/users/3/any"; etc
     // + -> for one or more characters,  Then /users/:id+ at least one id
     // ? -> for zero or one character,  Then /users/:id? match "/users" or "/users/anyId"
-    matchers: ["/users/:id*"] // THis the protected route
+    matcher: ["/dashboard/:path*"] // THis the protected route
 }
 ```
