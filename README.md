@@ -193,3 +193,4 @@ export const config = {
     matcher: ["/dashboard/:path*"] // THis the protected route
 }
 ```
+By using next-auth middleware with defined named convention [Here the documentation](https://authjs.dev/getting-started/adapters/prisma?_gl=1*n3yohy*_gcl_au*NTM5MzY1Nzk3LjE3MjQxNTQ3ODkuMTc3OTg1NzE4Mi4xNzI0MzU2MjQ2LjE3MjQzNTYyNDU.) with Prisma Adapter, all user details are store into tables.
