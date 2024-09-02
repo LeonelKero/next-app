@@ -175,9 +175,9 @@ This link to [configure Oauth with Google provider](https://next-auth.js.org/pro
 
 THESE ARE THE ENDPOINTS HANDLE BY NextAuth
 
-- `/api/auth/signin` defined by NextAuth for SignIn.
+- `/api/auth/signin` defined and builded by NextAuth for SignIn.
 
-- `/api/auth/signiout` defined by NextAuth for logout.
+- `/api/auth/signiout` defined and builded by NextAuth for logout.
 
 ### Protect Routes
 
