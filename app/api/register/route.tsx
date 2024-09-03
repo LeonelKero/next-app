@@ -17,17 +17,21 @@ export const POST = async (request: NextRequest) => {
       { error: bodyValidation.error.errors },
       { status: 400 }
     );
+
   // As schema matches
-  // Check if there no other user with the sane credentials
+  // Check if there no other user with the sane credentials aka email
   const potentialUser = await prisma.user.findUnique({
     where: { email: bodyValidation.data.email },
   });
+
   // If user does exist
   if (potentialUser)
     return NextResponse.json({ error: "User already esxist" }, { status: 400 });
+
   // Otherwise register this new user
   // First Hash the passeword
   const hashedPassword = await bcrypt.hash(bodyValidation.data.password, 10);
+  
   // Then persist user data
   const newUser = await prisma.user.create({
     data: { email: bodyValidation.data.email, hashedPassword },
