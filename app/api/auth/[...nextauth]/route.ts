@@ -17,11 +17,11 @@ export const authOptions: NextAuthOptions = {
             async authorize(credentials, req) {
                 // If one of the required credential miss, do nothing, just return
                 if (!credentials?.password || !credentials.email) return null
-                // If all credentials element are there, find corresponding user into database
+                // If all credentials element are there, find the corresponding user into database
                 const user = await prisma.user.findUnique({ where: { email: credentials.email } })
                 // If nothing is found, do nothing, just return
                 if (!user) return null
-                // Otherwise
+                // Otherwise, check the password and make sure it matches with the saved hash
                 const passwordMatch = await bcrypt.compare(credentials.password, user.hashedPassword!)
                 return passwordMatch ? user : null
             },
