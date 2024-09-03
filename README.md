@@ -182,7 +182,7 @@ THESE ARE THE ENDPOINTS HANDLE BY NextAuth
 ### Protect Routes
 
 The file holding this configuration should be at the root of the project file structure and named as `middleware.ts`.
-[Documentation](https://next-auth.js.org/configuration/nextjs#middleware)
+Take a look on the documentation [Documentation](https://next-auth.js.org/configuration/nextjs#middleware)
 ```Ts
 export {default} from 'next-auth/middleware';
 
