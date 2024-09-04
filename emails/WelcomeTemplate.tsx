@@ -4,6 +4,7 @@ import {
   Html,
   Link,
   Preview,
+  Tailwind,
   Text,
 } from "@react-email/components";
 
@@ -15,12 +16,14 @@ const WelcomeTemplate = ({ name }: Props) => {
   return (
     <Html>
       <Preview>Welcome on board</Preview>
-      <Body>
-        <Container>
-          <Text>Welcome {name}</Text>
-          <Link href="https://github.com/LeonelKero">Kanmogne Leonel</Link>
-        </Container>
-      </Body>
+      <Tailwind>
+        <Body>
+          <Container>
+            <Text className="font-bold text-3xl">Welcome {name}</Text>
+            <Link href="https://github.com/LeonelKero">Kanmogne Leonel</Link>
+          </Container>
+        </Body>
+      </Tailwind>
     </Html>
   );
 };
