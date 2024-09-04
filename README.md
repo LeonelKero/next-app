@@ -11,6 +11,7 @@ NextJs technology is builded on top of ReactJs, it is a complete framework with 
 - fast-sort 3.4+
 - zod 3.23+
 - Prisma 5.18+
+- Next [Documentation](https://nextjs.org/docs/pages/api-reference/components/font)
 - MySQL
 - Cloudinary
 - NextAuth 4.24+ (next-auth, providers, middleware, @next-auth/prisma-adapter)
