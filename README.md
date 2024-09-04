@@ -16,6 +16,7 @@ NextJs technology is builded on top of ReactJs, it is a complete framework with 
 - NextAuth 4.24+ (next-auth, providers, middleware, @next-auth/prisma-adapter)
 - bcrypt
 - react-mail, @react-email/components
+- Resend
 
 ## Topics
 
@@ -25,6 +26,7 @@ NextJs technology is builded on top of ReactJs, it is a complete framework with 
 - Building API
 - Upload file to cloud (Cloudinary)
 - Authentication
+- Send Email
 
 ## API
 
@@ -196,3 +198,7 @@ export const config = {
 }
 ```
 By using next-auth middleware with defined named convention [Here the documentation](https://authjs.dev/getting-started/adapters/prisma?_gl=1*n3yohy*_gcl_au*NTM5MzY1Nzk3LjE3MjQxNTQ3ODkuMTc3OTg1NzE4Mi4xNzI0MzU2MjQ2LjE3MjQzNTYyNDU.) with Prisma Adapter, all user details are store into tables.
+
+### Send Email
+
+Send emails with react-email and [Resend](https://resend.com/docs/send-with-nextjs).
