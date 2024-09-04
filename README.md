@@ -15,6 +15,7 @@ NextJs technology is builded on top of ReactJs, it is a complete framework with 
 - Cloudinary
 - NextAuth 4.24+ (next-auth, providers, middleware, @next-auth/prisma-adapter)
 - bcrypt
+- react-mail, @react-email/components
 
 ## Topics
 
